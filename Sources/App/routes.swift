@@ -1,6 +1,6 @@
 import Vapor
 
 func routes(_ app: Application) throws {
-    let controller = AuthController()
-    app.post("register", use: controller.register)
+    let personalProfileController = PersonalProfileController()
+    app.post("registerUser", use: personalProfileController.registerUser)
 }
