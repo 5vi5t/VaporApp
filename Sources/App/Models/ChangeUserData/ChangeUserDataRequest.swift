@@ -1,13 +1,13 @@
 //
-//  RegisterUserRequest.swift
+//  ChangeUserDataRequest.swift
 //  
 //
-//  Created by Константин on 17.02.2023.
+//  Created by Константин on 19.02.2023.
 //
 
 import Vapor
 
-struct RegisterUserRequest: Content {
+struct ChangeUserDataRequest: Content {
     let userId: Int
     let username: String
     let password: String
