@@ -6,4 +6,8 @@ func routes(_ app: Application) throws {
     app.post("changeUserData", use: personalProfileController.changeUserData)
     app.post("login", use: personalProfileController.login)
     app.post("logout", use: personalProfileController.logout)
+    
+    let catalogController = CatalogController()
+    app.post("catalogData", use: catalogController.catalogData)
+    app.post("getGoodById", use: catalogController.getGoodById)
 }
