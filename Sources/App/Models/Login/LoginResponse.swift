@@ -11,6 +11,11 @@ struct LoginResponse: Content {
     let result: Int
     let user: User?
     let errorMessage: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case result, user
+        case errorMessage = "error_message"
+    }
 }
 
 struct User: Content {
