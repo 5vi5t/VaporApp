@@ -10,4 +10,9 @@ func routes(_ app: Application) throws {
     let catalogController = CatalogController()
     app.post("catalogData", use: catalogController.catalogData)
     app.post("getGoodById", use: catalogController.getGoodById)
+
+    let reviewController = ReviewController()
+    app.post("addReview", use: reviewController.addReview)
+    app.post("removeReview", use: reviewController.removeReview)
+    app.post("reviewList", use: reviewController.reviewList)
 }
