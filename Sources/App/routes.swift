@@ -19,4 +19,5 @@ func routes(_ app: Application) throws {
     let basketController = BasketController()
     app.post("addToBasket", use: basketController.addToBasket)
     app.post("deleteFromBasket", use: basketController.deleteFromBasket)
+    app.post("payBasket", use: basketController.payBasket)
 }

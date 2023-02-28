@@ -38,4 +38,35 @@ class BasketController {
             errorMessage: nil)
         return req.eventLoop.future(successResponse)
     }
+
+    func payBasket(_ req: Request) -> EventLoopFuture<PayBasketResponse> {
+        guard let body = try? req.content.decode(PayBasketRequest.self),
+              body.amount > 0,
+              !body.amountMethod.isEmpty
+        else {
+            let errorResponse = PayBasketResponse(
+                amount: nil,
+                balance: nil,
+                products: nil,
+                result: 0,
+                errorMessage: "Сообщение об ошибке")
+            return req.eventLoop.future(errorResponse)
+        }
+        let successResponse = PayBasketResponse(
+            amount: 46600,
+            balance: 9999,
+            products: [
+                Product(
+                    productId: 123,
+                    productName: "Ноутбук",
+                    price: 45600),
+                Product(
+                    productId: 456,
+                    productName: "Мышка",
+                    price: 1000)
+            ],
+            result: 1,
+            errorMessage: nil)
+        return req.eventLoop.future(successResponse)
+    }
 }
