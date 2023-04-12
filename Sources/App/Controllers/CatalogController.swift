@@ -32,7 +32,7 @@ class CatalogController {
                     productName: "Мышка",
                     price: 1000)
             ],
-            result: nil,
+            result: 1,
             errorMessage: nil)
         return req.eventLoop.future(successResponse)
     }
